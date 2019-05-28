@@ -44,6 +44,7 @@
                 
                 $query="select tensp, tentg, giaban, hinhanh, tendm, masp from sanpham join danhmuc on sanpham.madm=danhmuc.madm "
                         . " where 1=1 ";
+
                 if(isset($_REQUEST['madm']))
                 {
                     $query.=' and sanpham.madm='.$_REQUEST['madm'];
@@ -58,7 +59,7 @@
                     {
                         $key=$_REQUEST['key'];
                         $query.= " and tensp like '%$key%'";
-                    } 
+                    }
                 if($_SERVER["REQUEST_METHOD"]=="POST")
                 {
                     if($_POST['orderby']==2)
